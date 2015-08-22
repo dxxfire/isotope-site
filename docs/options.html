@@ -181,13 +181,13 @@
   <dd class='option-type'>Type</dd>
   <dd class='default'>Default</dd>
 </dl>
-<h2 id='animationengine'>animationEngine</h2>
+<h2 id='animationengine'>动画引擎animationEngine</h2>
 <dl class='clearfix'>
   <dt><code>animationEngine</code></dt>
   <dd class='option-type'>String</dd>
   <dd class='default'><code><span class='s1'>'best-available'</span></code></dd>
 </dl>
-<p>Determines the jQuery method to apply styles, <code>.css()</code> or <code>.animate()</code>. Useful for relying on CSS transitions to handle animation.</p>
+<p>决定jQuery方法的应用样式，CSS()或者动画()。对于依托CSS转换处理动画非常有用。Determines the jQuery method to apply styles, <code>.css()</code> or <code>.animate()</code>. Useful for relying on CSS transitions to handle animation.</p>
 
 <h3 id='animationEngine-values'>Values</h3>
 
@@ -205,7 +205,7 @@
   <dd class='option-type'>Object</dd>
   <dd class='default'><code>{ queue: <span class='kc'>false</span>, duration: <span class='mi'>800</span> }</code></dd>
 </dl>
-<p>When jQuery is the animation engine (see above), these options will be used in <code>.animate()</code>. See the <a href='http://api.jquery.com/animate/#animate-properties-options'>jQuery API for animate options</a> for details.</p>
+<p>当jQuery作为动画引擎时，可以使用这些选项。When jQuery is the animation engine (see above), these options will be used in <code>.animate()</code>. See the <a href='http://api.jquery.com/animate/#animate-properties-options'>jQuery API for animate options</a> for details.</p>
 
 <h3 id='example'>Example</h3>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
@@ -223,14 +223,14 @@
   <dd class='option-type'>String</dd>
   <dd class='default'><code><span class='s1'>'isotope'</span></code></dd>
 </dl>
-<p>The class applied to the container element.</p>
+<p>该类应用于容器元素。The class applied to the container element.</p>
 
 <h2 id='filter'>filter</h2>
 <dl class='clearfix'>
   <dt><code>filter</code></dt>
   <dd class='option-type'>Selector</dd>
 </dl>
-<p>Setting a filter with show item elements that match the selector, and hide elements that do not match. See <a href='filtering.html'>docs on filering</a> for more details.</p>
+<p>设置一个过滤器显示匹配的项目元素，隐藏不匹配的元素。Setting a filter with show item elements that match the selector, and hide elements that do not match. See <a href='filtering.html'>docs on filering</a> for more details.</p>
 
 <p><a href='../demos/filtering.html'><strong>See Demo: Filtering</strong></a></p>
 
@@ -243,7 +243,7 @@
   <dt><code>getSortData</code></dt>
   <dd class='option-type'>Object</dd>
 </dl>
-<p>An object containing one or several methods to retrieve data for Sorting. The methods receive one parameter (<code>$elem</code> in the example below) which is a jQuery object representing each item element. The methods need to return a value. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
+<p>一个包含一个或几个方法来检索数据排序的对象。该方法接受一个参数（$元元素下面的例子中）这是一个jQuery对象代表每一项元素。该方法需要返回值。看到更多的细节整理文档。An object containing one or several methods to retrieve data for Sorting. The methods receive one parameter (<code>$elem</code> in the example below) which is a jQuery object representing each item element. The methods need to return a value. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
 
 <p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
 
@@ -269,7 +269,7 @@
   <dd class='option-type'>String</dd>
   <dd class='default'><code><span class='s1'>'isotope-hidden'</span></code></dd>
 </dl>
-<p>The class applied to item elements hidden by Filtering.</p>
+<p>类应用于隐藏过滤的项目元素。The class applied to item elements hidden by Filtering.</p>
 
 <h2 id='hiddenstyle'>hiddenStyle</h2>
 <dl class='clearfix'>
@@ -277,7 +277,7 @@
   <dd class='option-type'>Object</dd>
   <dd class='default'><code>{ opacity : <span class='mi'>0</span>, scale : <span class='mi'>0.001</span> }</code></dd>
 </dl>
-<p>The style applied to item elements hidden by Filtering.</p>
+<p>用于隐藏过滤的项目元素的样式。The style applied to item elements hidden by Filtering.</p>
 
 <h2 id='itemclass'>itemClass</h2>
 <dl class='clearfix'>
@@ -285,7 +285,7 @@
   <dd class='option-type'>String</dd>
   <dd class='default'><code><span class='s1'>'isotope-item'</span></code></dd>
 </dl>
-<p>The class applied to item elements.</p>
+<p>该类应用在项目元素上。The class applied to item elements.</p>
 
 <h2 id='itempositiondataenabled'>itemPositionDataEnabled</h2>
 <dl class='clearfix'>
@@ -293,7 +293,7 @@
   <dd class='option-type'>Boolean</dd>
   <dd class='default'><code><span class='kc'>false</span></code></dd>
 </dl>
-<p>When enabled, the position of item elements will exposed as data, which you can retrieve with jQuery&#8217;s data method with <code><span class='s1'>'isotope-item-position'</span></code> name space. Position is return as an object with <code>x</code> and <code>y</code>;</p>
+<p>当启用时，项目元素的位置会暴露的数据，你可以使用jQuery的数据检索方法和同位素项目位置的名称空间。位置作为一个对象返回X和Y；When enabled, the position of item elements will exposed as data, which you can retrieve with jQuery&#8217;s data method with <code><span class='s1'>'isotope-item-position'</span></code> name space. Position is return as an object with <code>x</code> and <code>y</code>;</p>
 
 <h3 id='example'>Example</h3>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
@@ -312,7 +312,7 @@
   <dt><code>itemSelector</code></dt>
   <dd class='option-type'>Selector</dd>
 </dl>
-<p>Restricts Isotope item elements to selector.</p>
+<p>限制Isotope项目元素被选择。Restricts Isotope item elements to selector.</p>
 
 <h2 id='layoutmode'>layoutMode</h2>
 <dl class='clearfix'>
@@ -330,7 +330,7 @@
   <dd class='option-type'>Boolean</dd>
   <dd class='default'><code><span class='kc'>true</span></code></dd>
 </dl>
-<p>Triggers layout logic when browser window is resized.</p>
+<p>当浏览器窗口尺寸变动时，触发布局逻辑。Triggers layout logic when browser window is resized.</p>
 
 <h2 id='resizescontainer'>resizesContainer</h2>
 <dl class='clearfix'>
@@ -338,7 +338,7 @@
   <dd class='option-type'>Boolean</dd>
   <dd class='default'><code><span class='kc'>true</span></code></dd>
 </dl>
-<p>Isotope will set the height (for vertical layout modes) or width (for horizontal layout modes) of the container after layout. If <code>resizesContainer</code> is set to <code><span class='kc'>false</span></code>, be sure to set a size for the container in your CSS, so it doesn&#8217;t collapse when Isotope is triggered.</p>
+<p>布局后Isotope 将设置容器的高度(垂直布局模式)或宽度(横向布局模式)，如果resizesContainer 被设为false，那么确保CSS设置了容器的高度，则Isotope 触发的时候不会崩溃。Isotope will set the height (for vertical layout modes) or width (for horizontal layout modes) of the container after layout. If <code>resizesContainer</code> is set to <code><span class='kc'>false</span></code>, be sure to set a size for the container in your CSS, so it doesn&#8217;t collapse when Isotope is triggered.</p>
 
 <h2 id='sortascending'>sortAscending</h2>
 <dl class='clearfix'>
@@ -346,7 +346,7 @@
   <dd class='option-type'>Boolean</dd>
   <dd class='default'><code><span class='kc'>true</span></code></dd>
 </dl>
-<p>Used with sorting. If true, items are sorted ascending: &#8220;1, 2, 3&#8221; or &#8220;A, B, C&#8230;&#8221;. If false, items are sorted descending &#8220;Z, Y, X&#8221; or &#8220;9, 8, 7&#8230;&#8221;. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
+<p>用于排序，如果为true，项目将按升序排列。如果为false，则按降序排列。Used with sorting. If true, items are sorted ascending: &#8220;1, 2, 3&#8221; or &#8220;A, B, C&#8230;&#8221;. If false, items are sorted descending &#8220;Z, Y, X&#8221; or &#8220;9, 8, 7&#8230;&#8221;. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
 
 <p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
 
@@ -355,14 +355,14 @@
   <dt><code>sortBy</code></dt>
   <dd class='option-type'>String</dd>
 </dl>
-<p>The property name of the method within the <code>getSortData</code> option to sort item elements. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
+<p>这个属性用于<code>getSortData</code>方法去进行排序。The property name of the method within the <code>getSortData</code> option to sort item elements. See <a href='sorting.html'>docs on sorting</a> for more details.</p>
 
 <p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
 
 <h3 id='sortBy-values'>Values</h3>
 
 <ul>
-<li><code>&#39;original-order&#39;</code> Sorts item elements by their original order.</li>
+<li><code>按原来的顺序排序项目元素。&#39;original-order&#39;</code> Sorts item elements by their original order.</li>
 </ul>
 
 <h2 id='transformsenabled'>transformsEnabled</h2>
@@ -371,11 +371,11 @@
   <dd class='option-type'>Boolean</dd>
   <dd class='default'><code><span class='kc'>true</span></code></dd>
 </dl>
-<p>Isotope uses CSS3 transform to position item elements, when available in the browser. Setting <code>transformsEnabled</code> to <code><span class='kc'>false</span></code> will disable this feature so all browsers use top/left absolute positioning. Useful for <a href='help.html#flash'>resolving issues with Flash content</a>.</p>
+<p>Isotope使用CSS3的变换transforms功能于项目元素位置，当浏览器支持时。设置<code>transformsEnabled</code>为false禁用该功能，则所有的浏览器使用top/left绝对定位，Isotope uses CSS3 transform to position item elements, when available in the browser. Setting <code>transformsEnabled</code> to <code><span class='kc'>false</span></code> will disable this feature so all browsers use top/left absolute positioning. Useful for <a href='help.html#flash'>resolving issues with Flash content</a>.</p>
 
-<h3 id='transformsEnabled-css'>Additional CSS</h3>
+<h3 id='transformsEnabled-css'>CSS转换功能Additional CSS</h3>
 
-<p>If you do disable transforms, but still want to use <a href='animating.html#css_transitions'>CSS transitions</a>, you&#8217;ll need add the following CSS:</p>
+<p>如果您禁用了变换，但仍想使用CSS转换(过渡)功能，你需要添加下面的CSS：If you do disable transforms, but still want to use <a href='animating.html#css_transitions'>CSS transitions</a>, you&#8217;ll need add the following CSS:</p>
 <div class='highlight'><pre><code class='css'><span class='nc'>.isotope</span> <span class='nc'>.isotope-item</span> <span class='p'>{</span>
   <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
      <span class='o'>-</span><span class='n'>moz</span><span class='o'>-</span><span class='n'>transition</span><span class='o'>-</span><span class='n'>property</span><span class='o'>:</span> <span class='k'>top</span><span class='o'>,</span> <span class='k'>left</span><span class='o'>,</span> <span class='k'>opacity</span><span class='p'>;</span>
