@@ -148,27 +148,27 @@
       <h1>Adding items</h1>
     
 
-    <p>If your application dynamically adds new content, Isotope provides several methods to add items.</p>
+    <p>如果你的应用程序动态地增加新的内容，Isotope提供了几种方法来添加项目。If your application dynamically adds new content, Isotope provides several methods to add items.</p>
 
 <p><a href='../demos/adding-items.html'><strong>See Demo: Adding items</strong></a>.</p>
 
 <h2 id='additems_method'>addItems method</h2>
 
-<p>The <a href='methods.html#additems'><code>addItems</code> method</a> adds new content to an Isotope container. This applies the proper styles to the items so they can be positioned and any sorting data is retrieved. But that&#8217;s it. The new content will <em>not</em> be filtered, sorted, or positioned properly, nor will it be appended to the container element.</p>
+<p>addItems方法添加一个新的内容给一个Isotope容器。应用适当的样式使该项目可以被定位，且排序数据可以被检索。The <a href='methods.html#additems'><code>addItems</code> method</a> adds new content to an Isotope container. This applies the proper styles to the items so they can be positioned and any sorting data is retrieved. 但是新的内容将不会被过滤、排序、或正确放置，也不会被添加到容器元素中。But that&#8217;s it. The new content will <em>not</em> be filtered, sorted, or positioned properly, nor will it be appended to the container element.</p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
 <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>append</span><span class='p'>(</span> <span class='nx'>$newItems</span> <span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;addItems&#39;</span><span class='p'>,</span> <span class='nx'>$newItems</span> <span class='p'>);</span>
 </code></pre>
 </div>
 <h2 id='insert_method'>insert method</h2>
 
-<p>More likely, you want to use the <a href='methods.html#insert'><code>insert</code> method</a>, which does everything that <code>addItems</code> misses. <code>insert</code> will append the content to the container, filter the new content, sort all the content, then trigger a <code>reLayout</code> so all item elements are properly laid out.</p>
+<p>更可能的是，你要使用insert方法，避免addItems方法丢失的那些东西。More likely, you want to use the <a href='methods.html#insert'><code>insert</code> method</a>, which does everything that <code>addItems</code> misses. insert方法会追加内容到容器，过滤的新内容，排序所有的内容，reLayout 触发器会使所有项目都合理布局。<code>insert</code> will append the content to the container, filter the new content, sort all the content, then trigger a <code>reLayout</code> so all item elements are properly laid out.</p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
 <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;insert&#39;</span><span class='p'>,</span> <span class='nx'>$newItems</span> <span class='p'>);</span>
 </code></pre>
 </div>
 <h2 id='appended_method'>appended method</h2>
 
-<p>The <a href='methods.html#appended'><code>appended</code> method</a> is a convenience method triggers <code>addItems</code> on new content, then lays out <em>only the new content</em> at the end of the layout. This method is useful if you know you only want to add new content to the end, and <strong>not</strong> use filtering or sorting. <code>appended</code> is the best method to use with Infinite Scroll.</p>
+<p>appended方法是一种方便的方法将新的内容触发addItems，仅将新的内容放置在布局底部。如果你确定只想把新的内容添加到最后，而且不使用过滤或排序，这个方法是最好的方法，使用无限滚动。The <a href='methods.html#appended'><code>appended</code> method</a> is a convenience method triggers <code>addItems</code> on new content, then lays out <em>only the new content</em> at the end of the layout. This method is useful if you know you only want to add new content to the end, and <strong>not</strong> use filtering or sorting. <code>appended</code> is the best method to use with Infinite Scroll.</p>
 
 <p><a href='../demos/infinite-scroll.html'><strong>See Demo: Infinite Scroll</strong></a>.</p>
 
@@ -176,7 +176,7 @@
 
 <h2 id='prepending'>Prepending</h2>
 
-<p>Because of Isotope&#8217;s sorting functionality, prepending isn&#8217;t as straight forward as might expect. However, it can be replicated fairly easy. After prepending new content to the container, you can re-collect all the item elements and update their sorting order with the <a href='methods.html#reloaditems'><code>reloadItems</code> method</a>. Then trigger a re-layout, with the original DOM order.</p>
+<p>因为Isotope的排序功能，在容器前加入的功能不能像预期的那样。然而，它相当容易复制，想在容器前面加上新的内容，你可以重新收集所有的项目元素，用reloaditems方法更新排序。会触发使用原有的DOM顺序重新布局。Because of Isotope&#8217;s sorting functionality, prepending isn&#8217;t as straight forward as might expect. However, it can be replicated fairly easy. After prepending new content to the container, you can re-collect all the item elements and update their sorting order with the <a href='methods.html#reloaditems'><code>reloadItems</code> method</a>. Then trigger a re-layout, with the original DOM order.</p>
 <div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>$newItems</span> <span class='o'>=</span> <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&lt;div class=&quot;item&quot; /&gt;&#39;</span><span class='p'>);</span>
 <span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>prepend</span><span class='p'>(</span> <span class='nx'>$newItems</span><span class='p'>)</span>
   <span class='p'>.</span><span class='nx'>isotope</span><span class='p'>(</span> <span class='s1'>&#39;reloadItems&#39;</span> <span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>sortBy</span><span class='o'>:</span> <span class='s1'>&#39;original-order&#39;</span> <span class='p'>});</span>
@@ -184,7 +184,8 @@
 </div>
     
     <footer>
-      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a></p>
+	  <a href="javascript:scroll(0,0)">返回顶部</a>
     </footer>
     
   </section> <!-- #content -->
