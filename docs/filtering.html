@@ -148,13 +148,13 @@
       <h1>Filtering</h1>
     
 
-    <p>Isotope can hide and show item elements via the <a href='options.html#filter'><code>filter</code> option</a>. <code>filter</code> accepts a jQuery selector. Items that match that selector will be shown. Items that do not match will be hidden.</p>
+    <p>Isotope可以通过过滤选项隐藏和显示项目元素。过滤器接受jQuery选择器。Isotope can hide and show item elements via the <a href='options.html#filter'><code>filter</code> option</a>. <code>filter</code> accepts a jQuery selector. 匹配选择器的项目将显示。不匹配的项目将被隐藏。Items that match that selector will be shown. Items that do not match will be hidden.</p>
 
 <p><a href='../demos/filtering.html'><strong>See Demo: Filtering</strong></a></p>
 
 <h2 id='markup'>Markup</h2>
 
-<p>Each item element has several identifying classes. In this case, <code>transition</code>, <code>metal</code>, <code>lanthanoid</code>, <code>alkali</code>, etc.</p>
+<p>每个项目元素有几个标识类。Each item element has several identifying classes. 在下面的例子中，有 transition, metal, lanthanoid, alkali,等等。In this case, <code>transition</code>, <code>metal</code>, <code>lanthanoid</code>, <code>alkali</code>, etc.</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&quot;container&quot;</span><span class='nt'>&gt;</span>
   <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element transition metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
   <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element post-transition metal&quot;</span><span class='nt'>&gt;</span>...<span class='nt'>&lt;/div&gt;</span>
@@ -173,11 +173,11 @@
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>filter</span><span class='o'>:</span> <span class='s1'>&#39;.metal&#39;</span> <span class='p'>});</span>
 </code></pre>
 </div>
-<p>Filtering selectors work just as expected. <code>.alkali, .alkaline-earth</code> will show both <code>.alkali</code> AND <code> .alkaline-earth</code> items, and hide all others. <code>.metal.transition</code> will show elements that have both <code>.metal</code> and <code>.transition</code> classes. <code>.metal:not(.transition)</code> will show <code>.metal</code> item elements that are not <code>.transition</code>.</p>
+<p>过滤选择器工作如预期。Filtering selectors work just as expected. <code>.alkali, .alkaline-earth</code> 将显示这两者will show both <code>.alkali</code> AND <code> .alkaline-earth</code> items, 隐藏其他所有的and hide all others. <code>.metal.transition</code> will show elements that have both <code>.metal</code> and <code>.transition</code> classes. <code>.metal:not(.transition)</code> will show <code>.metal</code> item elements that are not <code>.transition</code>.</p>
 
 <h2 id='creating_interactive_buttons'>Creating interactive buttons</h2>
 
-<p>Let&#8217;s use a basic list for our buttons</p>
+<p>让我们用一个按钮的基本列表Let&#8217;s use a basic list for our buttons</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;ul</span> <span class='na'>id=</span><span class='s'>&quot;filters&quot;</span><span class='nt'>&gt;</span>
   <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;*&quot;</span><span class='nt'>&gt;</span>show all<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
   <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;#&quot;</span> <span class='na'>data-filter=</span><span class='s'>&quot;.metal&quot;</span><span class='nt'>&gt;</span>metal<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
@@ -198,7 +198,7 @@
 </div>
 <h2 id='recommended_css'>Recommended CSS</h2>
 
-<p>If you choose to use the filtering functionality, add the following CSS to your stylesheet:</p>
+<p>如果您选择使用过滤功能，添加下面的CSS样式表给你：If you choose to use the filtering functionality, add the following CSS to your stylesheet:</p>
 <div class='highlight'><pre><code class='css'><span class='c'>/**** Isotope filtering ****/</span>
 
 <span class='nc'>.isotope-item</span> <span class='p'>{</span>
@@ -211,11 +211,11 @@
 <span class='p'>}</span>
 </code></pre>
 </div>
-<p>These styles ensure that hidden items will not interfere with interactions.</p>
+<p>这些样式确保隐藏的项目不会干扰交互。These styles ensure that hidden items will not interfere with interactions.</p>
     
     <footer>
       Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a></p>
-	  <a href="javascript:scroll(0,0)">���ض���</a>
+	  <a href="javascript:scroll(0,0)">返回顶部</a>
     </footer>
     
   </section> <!-- #content -->

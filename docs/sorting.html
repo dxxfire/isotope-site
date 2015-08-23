@@ -150,13 +150,13 @@
       <h1>Sorting</h1>
     
 
-    <p>Collect data from item element and rearrange their order in the layout with sorting.</p>
+    <p>从项目元素中收集数据并在布局中重新排列它们的顺序。Collect data from item element and rearrange their order in the layout with sorting.</p>
 
 <p><a href='../demos/sorting.html'><strong>See Demo: Sorting</strong></a></p>
 
 <h2 id='markup'>Markup</h2>
 
-<p>Any group of similar items have their own data. It could be a text value, like a title or tag, or a numerical value, like a measurement or grade. For our example, each item element has several data points that can be used for sorting. There&#8217;s the elemental symbol, number, name of the element, weight, and category.</p>
+<p>任何类似的项目组都有自己的数据。它可能是一个文本值，像一个标题或标记，或一个数值，像一个测量或等级。举例来说，每一项元素都有几个数据点，可用于排序。如元素的符号、数字、元素名称、重量和类别。Any group of similar items have their own data. It could be a text value, like a title or tag, or a numerical value, like a measurement or grade. For our example, each item element has several data points that can be used for sorting. There&#8217;s the elemental symbol, number, name of the element, weight, and category.</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&quot;container&quot;</span><span class='nt'>&gt;</span>
   <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;element transition metal&quot;</span> <span class='na'>data-category=</span><span class='s'>&quot;transition&quot;</span><span class='nt'>&gt;</span> 
     <span class='nt'>&lt;p</span> <span class='na'>class=</span><span class='s'>&quot;number&quot;</span><span class='nt'>&gt;</span>79<span class='nt'>&lt;/p&gt;</span> 
@@ -176,11 +176,11 @@
 </div>
 <h2 id='getsortdata_option'>getSortData option</h2>
 
-<p>In order to extract this data from the element, we need to pass in a function to get it via the <a href='options.html#getsortdata'><code>getSortData</code></a> option. This option accepts an object, whose values are the functions to extract the data.</p>
+<p>为了从元提取这些数据，我们需要传递一个函数可以通过getsortdata选项。此选项接受一个对象，其值是提取数据的函数。In order to extract this data from the element, we need to pass in a function to get it via the <a href='options.html#getsortdata'><code>getSortData</code></a> option. This option accepts an object, whose values are the functions to extract the data.</p>
 
-<p>Each function receives one argument, which represents a jQuery object for each item element. With that argument, the function needs to return the data point.</p>
+<p>每个函数接受一个参数，它代表一个jQuery对象中每一项元素。有了这个参数，函数需要返回数据点。Each function receives one argument, which represents a jQuery object for each item element. With that argument, the function needs to return the data point.</p>
 
-<p>In the example above, to get element name, we would need to get the text from the <code>.name</code> element. The same works for symbol.</p>
+<p>在上面的例子中，要获得元素名称，我们需要从“名称元素”中获取文本。符号相同的作品。In the example above, to get element name, we would need to get the text from the <code>.name</code> element. The same works for symbol.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span>
   <span class='nx'>getSortData</span> <span class='o'>:</span> <span class='p'>{</span>
     <span class='nx'>name</span> <span class='o'>:</span> <span class='kd'>function</span> <span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
@@ -193,7 +193,7 @@
 <span class='p'>});</span>
 </code></pre>
 </div>
-<p>For numerical data, we can convert a text value into a number with <code>parseInt()</code> or <code>parseFloat()</code>.</p>
+<p>对于数值数据，我们可以把一个文本值转换成数字，使用parseInt()或者parseFloat()方法。For numerical data, we can convert a text value into a number with <code>parseInt()</code> or <code>parseFloat()</code>.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>getSortData</span> <span class='o'>:</span> <span class='p'>{</span>
   <span class='c1'>// ...</span>
   <span class='nx'>number</span> <span class='o'>:</span> <span class='kd'>function</span> <span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
@@ -205,7 +205,7 @@
 <span class='p'>}</span>
 </code></pre>
 </div>
-<p>The data extracted can be anything accessible in the item element via jQuery. To extract the category data held within the <code>data-category</code> attribute, we can use the <code>.attr()</code>.</p>
+<p>提取的数据可以是任何可以通过jQuery的项目元素。提取数据的类别属性的范畴内举行的数据，我们可以使用attr()方法。The data extracted can be anything accessible in the item element via jQuery. To extract the category data held within the <code>data-category</code> attribute, we can use the <code>.attr()</code>.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>getSortData</span> <span class='o'>:</span> <span class='p'>{</span>
   <span class='c1'>// ...</span>
   <span class='nx'>category</span> <span class='o'>:</span> <span class='kd'>function</span> <span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
@@ -214,7 +214,7 @@
 <span class='p'>}</span>
 </code></pre>
 </div>
-<p>Get creative! You can sort the list in the <a href='../index.html'>index page</a> by the width of each item element.</p>
+<p>获得灵感！Get creative! 您可以按每个项目元素的宽度在索引页中排序列表。You can sort the list in the <a href='../index.html'>index page</a> by the width of each item element.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>getSortData</span> <span class='o'>:</span> <span class='p'>{</span>
   <span class='c1'>// ...</span>
   <span class='nx'>width</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elem</span> <span class='p'>)</span> <span class='p'>{</span>
@@ -225,26 +225,26 @@
 </div>
 <h2 id='sortby_option'>sortBy option</h2>
 
-<p>For every method set in <code>getSortData</code>, Isotope uses that method to build the data for sorting. The data cache is built on initialization so it can be quickly accessed when sorting. With the methods above, we have built data for an item elements name, symbol, number, weight and category.</p>
+<p>对每一个设置了getsortdata的方法，Isotope使用getSortData方法来建立数据的排序。数据缓存是在初始化时建立，所以它可以在排序时被快速访问。在上面的方法，我们已经建立了一个包括项目元素名称、符号、数字、重量和类别的数据。For every method set in <code>getSortData</code>, Isotope uses that method to build the data for sorting. The data cache is built on initialization so it can be quickly accessed when sorting. With the methods above, we have built data for an item elements name, symbol, number, weight and category.</p>
 
-<p>Sorting elements is done with the <a href='options.html#sortby'><code>sortBy</code> option</a>. The value needs to match the property name used in the <code>getSortData</code> object.</p>
+<p>元素排序是被sortBy选项处理。值需要匹配getsortdata对象的属性的名称。Sorting elements is done with the <a href='options.html#sortby'><code>sortBy</code> option</a>. The value needs to match the property name used in the <code>getSortData</code> object.</p>
 
 <p>With our example, we can use <code>&#39;name&#39;</code>, <code>&#39;symbol&#39;</code>, <code>&#39;number&#39;</code>, <code>&#39;weight&#39;</code> and <code>&#39;category&#39;</code>.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> <span class='nx'>sortBy</span> <span class='o'>:</span> <span class='s1'>&#39;symbol&#39;</span> <span class='p'>});</span>
 </code></pre>
 </div>
-<p>There is an additional sorting data built in to Isotope <code>&#39;original-order&#39;</code>. Sorting with <code>&#39;original-order&#39;</code> will use the original order of the item elements to arrange them in the layout.</p>
+<p>Isotope建立了一个额外的排序数据“原始顺序”。“原始顺序”的排序将使用项目元素的原始顺序排列它们的布局。There is an additional sorting data built in to Isotope <code>&#39;original-order&#39;</code>. Sorting with <code>&#39;original-order&#39;</code> will use the original order of the item elements to arrange them in the layout.</p>
 
 <h2 id='sortascending_option'>sortAscending option</h2>
 
-<p>By default, Isotope sorts data in ascension. If our data for name is &#8220;Gold, Antimony, Lead, Iron, Silver&#8221;, when sorted by name, the elements will be ordered ABC.. : &#8220;Antimony, Gold, Iron, Lead, Silver.&#8221; To reverse the order and sort data in descension, set <a href='options.html#sortascending'><code>sortAscending</code></a> to <code><span class='kc'>false</span></code>.</p>
+<p>默认情况下，Isotope使用升序进行数据排序。By default, Isotope sorts data in ascension. If our data for name is &#8220;Gold, Antimony, Lead, Iron, Silver&#8221;, when sorted by name, the elements will be ordered ABC.. : &#8220;Antimony, Gold, Iron, Lead, Silver.&#8221; 扭转顺序为倒序排列，需要设置sortAscending为false。To reverse the order and sort data in descension, set <a href='options.html#sortascending'><code>sortAscending</code></a> to <code><span class='kc'>false</span></code>.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>(</span><span class='s1'>&#39;#container&#39;</span><span class='p'>).</span><span class='nx'>isotope</span><span class='p'>({</span> 
   <span class='nx'>sortBy</span> <span class='o'>:</span> <span class='s1'>&#39;name&#39;</span><span class='p'>,</span>
   <span class='nx'>sortAscending</span> <span class='o'>:</span> <span class='kc'>false</span>
 <span class='p'>});</span>
 </code></pre>
 </div>
-<h2 id='creating_interactive_buttons'>Creating interactive buttons</h2>
+<h2 id='creating_interactive_buttons'>创建互动按钮。 Creating interactive buttons</h2>
 
 <p>We can use a simple list for our buttons.</p>
 <div class='highlight'><pre><code class='html'><span class='nt'>&lt;ul</span> <span class='na'>id=</span><span class='s'>&quot;sort&quot;</span><span class='nt'>&gt;</span>
@@ -267,7 +267,8 @@
 </div>
     
     <footer>
-      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a></p>
+	  <a href="javascript:scroll(0,0)">返回顶部</a>
     </footer>
     
   </section> <!-- #content -->
