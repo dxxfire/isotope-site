@@ -260,11 +260,11 @@
 </div>
 <h2 id='straightacross'>straightAcross</h2>
 
-<p>项目元素被安排的水平左至右。做简单列表很有用。Item elements are arranged horizontally left to right. Useful for simple lists.</p>
+<p>项目元素被安排的水平左至右。有用的简单列表。Item elements are arranged horizontally left to right. Useful for simple lists.</p>
 
 <h2 id='straightdown'>straightDown</h2>
 
-<p>项目元素被安排的垂直从上到下。做简单列表很有用。Item elements are arranged vertically top to bottom. Useful for simple lists.</p>
+<p>Item elements are arranged vertically top to bottom. Useful for simple lists.</p>
 
 <h2 id='horizontal_layouts'>Horizontal layouts</h2>
 

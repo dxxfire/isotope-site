@@ -240,8 +240,7 @@
 <p>更新指定项目元素的排序数据。这是一个有用的方法，如果Isotope已经初始化后，项目内的数据可以动态变化。Updates the sorting data on specified item elements. This method is useful if the data within an item is changed dynamically after Isotope has been initialized.</p>
     
     <footer>
-      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a></p>
-	  <a href="javascript:scroll(0,0)">返回顶部</a> 
+      Isotope by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a><a href="javascript:scroll(0,0)">返回顶部</a> 
     </footer>
     
   </section> <!-- #content -->
