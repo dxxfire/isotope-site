@@ -139,10 +139,10 @@
   
   <section id="content">
     
-      <h1>Extending Isotope</h1>
+      <h1>Isotope拓展Extending Isotope</h1>
     
 
-    <p>Isotope uses a constructor pattern, <code>$.Isotope</code>. To extend Isotope, you need only to add a method to <code>$.Isotope.prototype</code>.</p>
+    <p>$.Isotope使用了构造器模式$.Isotope。当要拓展Isotope时，你只需要添加方法给$.Isotope.prototype。 Isotope uses a constructor pattern, <code>$.Isotope</code>. To extend Isotope, you need only to add a method to <code>$.Isotope.prototype</code>.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>.</span><span class='nx'>myMethod</span> <span class='o'>=</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>};</span>
 
 <span class='c1'>// or, using jQuery extend utility</span>
@@ -151,11 +151,11 @@
 <span class='p'>});</span>
 </code></pre>
 </div>
-<p>Before diving in, try <a href='../jquery.isotope.js'>looking over the source</a> to get a better understand of the internal logic behind Isotope.</p>
+<p>在尝试前，查看源码更好的理解Isotope内部的逻辑。Before diving in, try <a href='../jquery.isotope.js'>looking over the source</a> to get a better understand of the internal logic behind Isotope.</p>
 
-<h2 id='custom_layout_modes'>Custom layout modes</h2>
+<h2 id='custom_layout_modes'>自定义布局模式Custom layout modes</h2>
 
-<p>Isotope&#8217;s layout modes are built around four methods: <code>Reset</code>, <code>Layout</code>, <code>GetContainerSize</code>, and <code>ResizeChanged</code>. These methods are the hooks that allow you to develop your own custom layout mode, without getting your hands dirty dealing with sorting, filtering, or other functionality. These layout mode methods need to be prefixed with an underscore and the name of the layout mode.</p>
+<p>Isotope布局模式通过4个方法建立Reset, Layout, GetContainerSize, 和 ResizeChanged。这些方法是允许你开发自己的自定义布局模式的钩子，而不让你的手弄脏处理排序、过滤或其他功能。这些布局方式方法需要加下划线前缀和布局模式的名称。Isotope&#8217;s layout modes are built around four methods: <code>Reset</code>, <code>Layout</code>, <code>GetContainerSize</code>, and <code>ResizeChanged</code>. These methods are the hooks that allow you to develop your own custom layout mode, without getting your hands dirty dealing with sorting, filtering, or other functionality. These layout mode methods need to be prefixed with an underscore and the name of the layout mode.</p>
 <div class='highlight'><pre><code class='javascript'><span class='c1'>// adding layout mode methods for &#39;customMode&#39;</span>
 <span class='nx'>$</span><span class='p'>.</span><span class='nx'>extend</span><span class='p'>(</span> <span class='nx'>$</span><span class='p'>.</span><span class='nx'>Isotope</span><span class='p'>.</span><span class='nx'>prototype</span><span class='p'>,</span> <span class='p'>{</span>
   <span class='nx'>_customModeReset</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span> <span class='p'>...</span> <span class='p'>},</span>
@@ -167,15 +167,15 @@
 </div>
 <p><a href='../demos/category-rows.html'><strong>See Demo: Category Rows</strong></a></p>
 
-<p>All of the <a href='../docs/layout-modes.html'>default layout modes</a> follow this pattern. We&#8217;ll look at the code behind the <em>fitRows</em> layout mode.</p>
+<p>所有的默认布局模式遵循这个模式。我们将看看fitrows布局模式的代码。All of the <a href='../docs/layout-modes.html'>default layout modes</a> follow this pattern. We&#8217;ll look at the code behind the <em>fitRows</em> layout mode.</p>
 
 <h3 id='reset'>Reset</h3>
 
-<p>Each layout mode should have its own set of properties that only it can use and not be affected by other layout modes. These properties can be accessed in the instance as an object whose value matches the layout mode name (i.e. <code>this.fitRows</code> for <em>fitRows</em>).</p>
+<p>每个布局模式应该有它自己的一组属性，这样它才能使用，而不受其他布局模式的影响。这些属性可以在实例化一个对象的值来匹配布局模式的名称（即this.fitrows为fitrows）。Each layout mode should have its own set of properties that only it can use and not be affected by other layout modes. These properties can be accessed in the instance as an object whose value matches the layout mode name (i.e. <code>this.fitRows</code> for <em>fitRows</em>).</p>
 
-<p>The <code>Reset</code> layout mode method is called with every <code>reLayout</code>, where Isotope will go through each item element and position it. This method resets layout mode properties.</p>
+<p>每一次重新布局都会调用Reset布局模式方法，其中Isotope将布置各项目元素的位置。这种方法重置了布局模式的特性。The <code>Reset</code> layout mode method is called with every <code>reLayout</code>, where Isotope will go through each item element and position it. This method resets layout mode properties.</p>
 
-<p>The <em>fitRows</em> layout mode keeps track of x and y position, as well as the height of the container. These properties are set back to zero in <code>Reset</code>.</p>
+<p>fitRows布局模式跟踪X和Y的位置，以及容器的高度。这些属性被设置为重置为零。The <em>fitRows</em> layout mode keeps track of x and y position, as well as the height of the container. These properties are set back to zero in <code>Reset</code>.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsReset</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
   <span class='k'>this</span><span class='p'>.</span><span class='nx'>fitRows</span> <span class='o'>=</span> <span class='p'>{</span>
     <span class='nx'>x</span> <span class='o'>:</span> <span class='mi'>0</span><span class='p'>,</span>
@@ -187,11 +187,11 @@
 </div>
 <h3 id='layout'>Layout</h3>
 
-<p>The <code>Layout</code> layout mode method is where items are positioned. Most of your layout logic happens here. This method provides one argument <code>$elems</code> &#8211; a jQuery object with the item elements that need to be positioned.</p>
+<p>Layout布局模式方法用来放置项目的位置。你的布局逻辑大部分发生在这里。这种方法提供了一个参数$elems（一个需要定位的项目元素的jQuery对象）。The <code>Layout</code> layout mode method is where items are positioned. Most of your layout logic happens here. This method provides one argument <code>$elems</code> &#8211; a jQuery object with the item elements that need to be positioned.</p>
 
-<p><code>$elems.each</code> is the principle loop, iterating over each item element and positioning it. Items are positioned with the <code>_pushPosition</code> method (see below). The layout modes properties are</p>
+<p>$elems.each的原理是循环，遍历每项元素并定位。项目使用_pushposition方法定位（见下文）。布局模式属性<code>$elems.each</code> is the principle loop, iterating over each item element and positioning it. Items are positioned with the <code>_pushPosition</code> method (see below). The layout modes properties are</p>
 
-<p>For <em>fitRows</em>, items are placed with the <code>this.fitRows.x</code> and <code>this.fitRows.y</code> values. This position is determined by if the item can fit in the current row, or if a new row needs to be started.</p>
+<p>对于fitRows，项目通过this.fitRows.x and this.fitRows.y值来放置。如果该项可以在当前行中进行，或者需要开始一个新的行来决定这个位置。For <em>fitRows</em>, items are placed with the <code>this.fitRows.x</code> and <code>this.fitRows.y</code> values. This position is determined by if the item can fit in the current row, or if a new row needs to be started.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsLayout</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>(</span> <span class='nx'>$elems</span> <span class='p'>)</span> <span class='p'>{</span>
   <span class='kd'>var</span> <span class='nx'>instance</span> <span class='o'>=</span> <span class='k'>this</span><span class='p'>,</span>
       <span class='nx'>containerWidth</span> <span class='o'>=</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>element</span><span class='p'>.</span><span class='nx'>width</span><span class='p'>(),</span>
@@ -220,9 +220,9 @@
 </div>
 <h3 id='getcontainersize'>GetContainerSize</h3>
 
-<p>After the script goes through positioning each item, it needs to resize the container. <code>GetContainerSize</code> returns the style for the size of the container.</p>
+<p>通过脚本定位每一个项目之后，需要调整容器的大小。GetContainerSize 返回容器的样式（大小）。After the script goes through positioning each item, it needs to resize the container. <code>GetContainerSize</code> returns the style for the size of the container.</p>
 
-<p>In <em>fitRows</em>, the height property is returned as the value for height.</p>
+<p>例如fitRows，高度的值作为高度属性被返回。In <em>fitRows</em>, the height property is returned as the value for height.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsGetContainerSize</span> <span class='o'>:</span> <span class='kd'>function</span> <span class='p'>()</span> <span class='p'>{</span>
   <span class='k'>return</span> <span class='p'>{</span> <span class='nx'>height</span> <span class='o'>:</span> <span class='k'>this</span><span class='p'>.</span><span class='nx'>fitRows</span><span class='p'>.</span><span class='nx'>height</span> <span class='p'>};</span>
 <span class='p'>},</span>
@@ -230,7 +230,7 @@
 </div>
 <h3 id='resizechanged'>ResizeChanged</h3>
 
-<p><code>ResizeChanged</code> is triggered whenever the browser window is resized. Before Isotope adjusts the layout, this method is triggered to determine if the layout has actually changed. The methods return a boolean.</p>
+<p>浏览器窗口大小调整时ResizeChanged被触发。Isotope调整布局前，触发该方法来确定布局是否真的发生了改变。该方法返回布尔值。<code>ResizeChanged</code> is triggered whenever the browser window is resized. Before Isotope adjusts the layout, this method is triggered to determine if the layout has actually changed. The methods return a boolean.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_fitRowsResizeChanged</span> <span class='o'>:</span> <span class='kd'>function</span><span class='p'>()</span> <span class='p'>{</span>
   <span class='k'>return</span> <span class='kc'>true</span><span class='p'>;</span>
 <span class='p'>},</span>
@@ -238,16 +238,16 @@
 </div>
 <h3 id='helper_methods'>Helper methods</h3>
 
-<p>The <code>_pushPosition</code> method is used within a layout mode&#8217;s <code>Layout</code> method. It takes 3 arguments: the item element currently being positioned, the x position, and the y position.</p>
+<p>_pushPosition方法是一种布局模式的布局方法。它需要3个参数：当前项目元素的位置，X和Y的位置。The <code>_pushPosition</code> method is used within a layout mode&#8217;s <code>Layout</code> method. It takes 3 arguments: the item element currently being positioned, the x position, and the y position.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_pushPosition</span><span class='p'>(</span> <span class='nx'>$item</span><span class='p'>,</span> <span class='nx'>x</span><span class='p'>,</span> <span class='nx'>y</span> <span class='p'>)</span>
 </code></pre>
 </div>
-<p><code>_getSegments</code> is used within the layout mode&#8217;s <code>Reset</code> method. It performs several utilities:</p>
+<p>_getSegments是布局模式的Reset方法使用。它执行几个实用程序：<code>_getSegments</code> is used within the layout mode&#8217;s <code>Reset</code> method. It performs several utilities:</p>
 
 <ul>
-<li>Determines the <code>columnWidth</code> for the layout mode (<code>rowHeight</code> for horizontal layout modes). This is either passed in as an option (i.e. <code>masonry { columnWidth: 90 }</code>), or the width of the first item element. This property is then set for the layout mode, i.e. <code>this.masonry.columnWidth</code>.</li>
+<li>确定布局模式columnWidth（水平布置方式设定指定行的高度）。这是通过选项（i.e. masonry { columnWidth: 90 }），或第一项元素的宽度。布局模式通过这个属性设定，i.e. this.masonry.columnWidth。Determines the <code>columnWidth</code> for the layout mode (<code>rowHeight</code> for horizontal layout modes). This is either passed in as an option (i.e. <code>masonry { columnWidth: 90 }</code>), or the width of the first item element. This property is then set for the layout mode, i.e. <code>this.masonry.columnWidth</code>.</li>
 
-<li>Calculates the number of number of columns (or rows, if horizontal) given the size of the container. This property is then set for the layout mode, i.e. <code>this.masonry.cols</code>.</li>
+<li>计算列的数目（或行，如果水平），得到容器的大小。布局模式通过这个属性设定， i.e. this.masonry.cols。Calculates the number of number of columns (or rows, if horizontal) given the size of the container. This property is then set for the layout mode, i.e. <code>this.masonry.cols</code>.</li>
 </ul>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_getSegments</span><span class='p'>(</span> <span class='nx'>isHorizontal</span> <span class='p'>)</span>
 
@@ -263,7 +263,7 @@
 <span class='p'>},</span>
 </code></pre>
 </div>
-<p>Similarly, <code>_checkIfSegmentsChanged</code> is used within <code>ResizeChanged</code>. It returns a boolean indicating whether or not the number of columns or rows has changed since the window has been resized.</p>
+<p>同样，ResizeChanged使用_checkIfSegmentsChanged 。它返回一个布尔值，指示是否列或行数因窗口大小改变而改变了。Similarly, <code>_checkIfSegmentsChanged</code> is used within <code>ResizeChanged</code>. It returns a boolean indicating whether or not the number of columns or rows has changed since the window has been resized.</p>
 <div class='highlight'><pre><code class='javascript'><span class='nx'>_checkIfSegmentsChanged</span><span class='p'>(</span> <span class='nx'>isHorizontal</span> <span class='p'>)</span>
 
 <span class='c1'>// for example</span>
